@@ -1,1 +1,51 @@
-<h1>main.hbs</h1>
+<div class="container mt-5 col-8">
+  {{!-- filter --}}
+  <div class="row">
+    <select class="form-control form-control-lg">
+      <option>家居物業</option>
+      <option>交通出行</option>
+      <option>休閒娛樂</option>
+      <option>餐飲食品</option>
+      <option>其他</option>
+    </select>
+  </div>
+
+  {{!-- grand total --}}
+  <div class="row m-5">總金額 : 999</div>
+
+  {{!-- show info default sort by max date --}}
+
+  <ul class='list-group'>
+    <li class='list-group-item'>
+      <div class="row justify-content-between">
+        <div class="col-1">
+          <i class="fas fa-utensils fa-5x"></i>
+        </div>
+
+        <div class="col-1">
+          <h4>午餐</h4>
+          <h5>2021/01/01</h5>
+        </div>
+
+        <div class="col-1">
+          <div>999</div>
+        </div>
+
+        <div class="col-2">
+          <a class='btn btn-success' href="#">修改</a>
+          <form action="#" method="POST" style="display: inline;">
+            <button class='btn btn-danger' type="submit">刪除</button>
+          </form>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</div>
+
+{{!-- create new --}}
+<div class="text-center">
+  <a href="/new">
+    <button type="button" class="btn btn-primary bt-lg mt-5 text-center">新增支出</button>
+  </a>
+</div>

@@ -1,1 +1,53 @@
-<h1>new.hbs</h1>
+<div class="col-8">
+
+
+  <div class="form-group mb-5 row">
+    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"
+      style='vertical-align:middle'>*必填欄位</label>
+    <div class="col-sm-6">
+      <h3 style='display:inline;vertical-align:middle'>請輸入你的支出</h3>
+    </div>
+  </div>
+
+
+  <form>
+    <div class="form-group row mb-3">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">名稱* :</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+      </div>
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">日期* :</label>
+      <div class="col-sm-6">
+        <input type="date" class="form-control" id="date" name="date">
+      </div>
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">類別* :</label>
+      <div class="col-sm-6">
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row mb-5">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">金額* :</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+      </div>
+    </div>
+  </form>
+  <div class="text-center">
+    <button class='btn btn-success btn-lg' type="submit">新增支出</button>
+  </div>
+</div>
+
+{{!-- unknown usage --}}
+<script>
+  $('.datepicker').datepicker()
+</script>
