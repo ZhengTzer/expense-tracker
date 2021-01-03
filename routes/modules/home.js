@@ -13,8 +13,12 @@ router.get('/', (req, res) => {
     }
   )
 
+  // join 2 collection
   recordDBTable
     .aggregate([
+      {
+        $match: {}
+      },
       {
         $lookup: {
           from: 'categorytables',
