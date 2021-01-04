@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
       }
     ],
     function (err, result) {
-      return (totalAmount = result[0].totalAmount)
+      totalAmount = result[0].totalAmount
+      return totalAmount
     }
   )
 
