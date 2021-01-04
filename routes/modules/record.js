@@ -44,7 +44,7 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
   const id = req.params.id
   const { name, date, category, amount } = req.body
-  console.log(req.body)
+
   return recordDBTable
     .findById(id)
     .then((singleRecord) => {

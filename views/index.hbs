@@ -1,16 +1,24 @@
 <div class="container mt-5 col-8">
   {{!-- filter --}}
   <div class="row">
+
     <form action="/" method="GET">
-      <select class="form-control form-control-lg" onchange="this.form.submit()" id='categoryFilter'
-        name='categoryFilter'>
-        <option selected hidden>消費類別</option>
-        <option value='1'>家居物業</option>
-        <option value='2'>交通出行</option>
-        <option value='3'>休閒娛樂</option>
-        <option value='4'>餐飲食品</option>
-        <option value='5'>其他</option>
-      </select>
+      <div class="input-group">
+        <select class="form-control form-control-lg" onchange="this.form.submit()" id='category' name='category'>
+          <option hidden>-- 全類別 --</option>
+          <option value='1' {{#ifEquals categoryFilterToFront '1' }}selected{{/ifEquals}}>家居物業</option>
+          <option value='2' {{#ifEquals categoryFilterToFront '2' }}selected{{/ifEquals}}>交通出行</option>
+          <option value='3' {{#ifEquals categoryFilterToFront '3' }}selected{{/ifEquals}}>休閒娛樂</option>
+          <option value='4' {{#ifEquals categoryFilterToFront '4' }}selected{{/ifEquals}}>餐飲食品</option>
+          <option value='5' {{#ifEquals categoryFilterToFront '5' }}selected{{/ifEquals}}>其他</option>
+        </select>
+        <div class="input-group-append">
+          <a href="/">
+            <button class="btn btn-outline-secondary btn-lg" type="button">X 全選</button>
+          </a>
+        </div>
+      </div>
+
     </form>
   </div>
 

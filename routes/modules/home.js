@@ -5,19 +5,30 @@ const categoryDBTable = require('../../models/category')
 
 // index page
 router.get('/', (req, res) => {
-  // db side sum total amount
+  // category filter
+  categoryFilter = req.query
+  categoryFilterToFront = req.query.category
+
+  // get sum total amount
   recordDBTable.aggregate(
-    [{ $group: { _id: null, totalAmount: { $sum: '$amount' } } }],
+    [
+      {
+        $match: categoryFilter
+      },
+      {
+        $group: { _id: null, totalAmount: { $sum: '$amount' } }
+      }
+    ],
     function (err, result) {
       totalAmount = result[0].totalAmount
     }
   )
 
-  // join 2 collection
+  // get record list
   recordDBTable
     .aggregate([
       {
-        $match: {}
+        $match: categoryFilter
       },
       {
         $lookup: {
@@ -29,7 +40,9 @@ router.get('/', (req, res) => {
       }
     ])
     .sort({ date: 'desc' })
-    .then((recordList) => res.render('index', { recordList, totalAmount }))
+    .then((recordList) =>
+      res.render('index', { recordList, totalAmount, categoryFilterToFront })
+    )
     .catch((error) => console.log(error))
 })
 
