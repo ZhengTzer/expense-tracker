@@ -10,7 +10,6 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
   const { name, category, date, amount } = req.body
-  console.log(req.body)
   return recordDBTable
     .create({
       name,

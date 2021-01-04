@@ -16,8 +16,7 @@ const recordSchema = new Schema({
   },
   amount: {
     type: Number,
-    required: true,
-    min: [1, 'at least NT$1']
+    required: true
   }
 })
 
