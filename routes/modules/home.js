@@ -6,8 +6,9 @@ const categoryDBTable = require('../../models/category')
 // index page
 router.get('/', (req, res) => {
   // category filter
-  categoryFilter = req.query
-  categoryFilterToFront = req.query.category
+  const categoryFilter = req.query
+  const categoryFilterToFront = req.query.category
+  let totalAmount = 0
 
   // get sum total amount
   recordDBTable.aggregate(
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
       }
     ],
     function (err, result) {
-      totalAmount = result[0].totalAmount
+      return (totalAmount = result[0].totalAmount)
     }
   )
 
@@ -41,7 +42,11 @@ router.get('/', (req, res) => {
     ])
     .sort({ date: 'desc' })
     .then((recordList) =>
-      res.render('index', { recordList, totalAmount, categoryFilterToFront })
+      res.render('index', {
+        recordList,
+        totalAmount,
+        categoryFilterToFront
+      })
     )
     .catch((error) => console.log(error))
 })
