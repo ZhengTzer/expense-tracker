@@ -5,7 +5,7 @@ const handlebars = require('handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const helper = require('./helper')
-const port = 3000
+const port = process.env.PORT || 3000
 const app = express()
 
 // routes setting
