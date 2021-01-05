@@ -2,9 +2,9 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const handlebars = require('handlebars')
+const helper = require('handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
-const helper = require('./helper')
 const port = process.env.PORT || 3000
 const app = express()
 
